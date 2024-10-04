@@ -16,8 +16,7 @@ public class Job {
 
 //    ADDED CODE
     public Job() {
-    this.id = nextId;
-    nextId++;
+    this.id = nextId++;
     }
 
     public Job(int id) {
