@@ -15,12 +15,17 @@ public class Job {
 
 
 //    ADDED CODE
+    public Job() {
+    this.id = nextId;
+    nextId++;
+    }
+
     public Job(int id) {
         this.id = id;
     }
 
-    public Job(int id, String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        this.id = id;
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this.id = nextId++;
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -77,7 +82,12 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency);
+        return id == job.id &&
+                Objects.equals(name, job.name) &&
+                Objects.equals(employer, job.employer) &&
+                Objects.equals(location, job.location) &&
+                Objects.equals(positionType, job.positionType) &&
+                Objects.equals(coreCompetency, job.coreCompetency);
     }
 
     @Override
