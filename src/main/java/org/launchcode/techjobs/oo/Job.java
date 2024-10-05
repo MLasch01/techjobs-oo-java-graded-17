@@ -16,15 +16,20 @@ public class Job {
 
 //    ADDED CODE
     public Job() {
-    this.id = nextId++;
+        this.id = nextId;
+        nextId++;
     }
 
     public Job(int id) {
         this.id = id;
     }
 
-    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        this.id = nextId++;
+    public Job(String name,
+               Employer employer,
+               Location location,
+               PositionType positionType,
+               CoreCompetency coreCompetency) {
+        this.id = nextId;
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -91,7 +96,10 @@ public class Job {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(id,
+                name, employer,
+                location, positionType,
+                coreCompetency);
     }
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
