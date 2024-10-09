@@ -70,6 +70,7 @@ public class JobTest {
 //        String jobString = lineSeparator() +
 //                job +
 //                lineSeparator();
+//        nfjkcsdbvc
 
         assertTrue(job.toString().startsWith(lineSeparator()));
         assertTrue(job.toString().endsWith(lineSeparator()));
