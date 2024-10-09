@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
 public class Job {
 
     private int id;
@@ -20,22 +22,20 @@ public class Job {
         nextId++;
     }
 
-    public Job(int id) {
-        this.id = id;
-    }
 
     public Job(String name,
                Employer employer,
                Location location,
                PositionType positionType,
                CoreCompetency coreCompetency) {
-        this.id = nextId;
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
 
     public String getName() {
         return name;
@@ -86,21 +86,34 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return id == job.id &&
-                Objects.equals(name, job.name) &&
-                Objects.equals(employer, job.employer) &&
-                Objects.equals(location, job.location) &&
-                Objects.equals(positionType, job.positionType) &&
-                Objects.equals(coreCompetency, job.coreCompetency);
+        return id == job.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-                name, employer,
-                location, positionType,
-                coreCompetency);
+        return Objects.hash(id);
     }
+
+    public String toString() {
+
+        String jobString = lineSeparator() +
+                "ID: " + id +
+                lineSeparator() +
+                "Name: " + (name == null || name.isEmpty() ? "Data not available" : name) +
+                lineSeparator() +
+                "Employer: " + (employer == null || employer.toString().isEmpty() ? "Data not available" : employer) +
+                lineSeparator() +
+                "Location: " + (location == null || location.toString().isEmpty() ? "Data not available" : location) +
+                lineSeparator() +
+                "Position Type: " + (positionType == null || positionType.toString().isEmpty() ? "Data not available" : positionType) +
+                lineSeparator() +
+                "Core Competency: " + (coreCompetency == null || coreCompetency.toString().isEmpty() ? "Data not available" : coreCompetency) +
+                lineSeparator();
+
+        return jobString;
+    }
+
+
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
