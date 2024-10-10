@@ -2,9 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.lang.reflect.InvocationTargetException;
-
 import static java.lang.System.lineSeparator;
 import static junit.runner.Version.id;
 import static org.junit.Assert.*;
@@ -67,14 +65,8 @@ public class JobTest {
                 new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-//        String jobString = lineSeparator() +
-//                job +
-//                lineSeparator();
-
         assertTrue(job.toString().startsWith(lineSeparator()));
         assertTrue(job.toString().endsWith(lineSeparator()));
-
-//        assertEquals(jobString,job.toString());
     }
 
     @Test
@@ -126,6 +118,4 @@ public class JobTest {
 
         assertEquals(emptyJobString,job.toString());
     }
-
-
 }
