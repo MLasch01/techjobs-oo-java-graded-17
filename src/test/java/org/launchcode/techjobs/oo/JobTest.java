@@ -70,7 +70,6 @@ public class JobTest {
 //        String jobString = lineSeparator() +
 //                job +
 //                lineSeparator();
-//        nfjkcsdbvc
 
         assertTrue(job.toString().startsWith(lineSeparator()));
         assertTrue(job.toString().endsWith(lineSeparator()));
@@ -87,11 +86,17 @@ public class JobTest {
                 new CoreCompetency("Persistence"));
 
         String jobString = lineSeparator() +
-                job.getId() +
-                "Product tester" +
-                "ACME" + "Desert" +
-                "Quality control" +
-                "Persistence" +
+                "ID: " + job.getId() +
+                lineSeparator() +
+                "Name: " + "Product tester" +
+                lineSeparator() +
+                "Employer: " + "ACME" +
+                lineSeparator() +
+                "Location: " + "Desert" +
+                lineSeparator() +
+                "Position Type: " + "Quality control" +
+                lineSeparator() +
+                "Core Competency: " + "Persistence" +
                 lineSeparator();
 
         assertEquals(jobString,job.toString());

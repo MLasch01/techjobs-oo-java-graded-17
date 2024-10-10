@@ -2,22 +2,26 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Location {
+public class Location extends JobField {
 
-    private int id;
-    private static int nextId = 1;
-    private String value;
+//    private int id;
+//    private static int nextId = 1;
+//    private String value;
+//
+//    public Location(String value) {
+//        this.id = nextId;
+//        this.value = value;
+//        nextId++;
+//    }
+//
+//    //ADDED CODE
+//    public Location(int id, String value) {
+//        this.id = id;
+//        this.value = value;
+//    }
 
-    public Location(String value) {
-        this.id = nextId;
-        this.value = value;
-        nextId++;
-    }
-
-    //ADDED CODE
-    public Location(int id, String value) {
-        this.id = id;
-        this.value = value;
+    public Location (String value) {
+        super(value);
     }
 
     // TODO: Add a constructor that takes a string as a parameter and assigns it to the 'value' field. The
@@ -46,16 +50,16 @@ public class Location {
 
     // Getters and Setters:
 
-    public int getId() {
-        return id;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public String getValue() {
+//        return value;
+//    }
+//
+//    public void setValue(String value) {
+//        this.value = value;
+//    }
 
 }
